@@ -1,0 +1,8 @@
+<h1>All Software Eng Projects</h1>
+
+<% @sprojects.each do |sp| %>
+    <p><strong>Title:</strong><%= sp.title%></p>
+    <p><strong>Description:</strong><%= sp.description %></p>
+    <p><strong>Content:</strong><%= sp.body %></p>
+    <hr>
+<% end %>

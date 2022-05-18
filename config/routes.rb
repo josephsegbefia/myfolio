@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   resources :projects, only: [:show, :index, :new, :create]
+
+  resources :software_projects, only: [:show, :index, :new, :create]
 end
