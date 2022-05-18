@@ -1,0 +1,23 @@
+<h1>Edit Story</h1>
+<% if @blog.errors.any? %>
+    <h2>The following error prevented the story from being updated:</h2>
+    <ul>
+        <% @blog.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul> 
+<%end%>
+
+<%= form_with(model: @blog, local: true ) do |f| %>
+    <p>
+        <%= f.label :title%><br>
+        <%= f.text_field :title%>
+    </p>
+    <p>
+        <%= f.label :body %><br>
+        <%= f.text_area :body %> 
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+<%end%>

@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
-  resources :projects, only: [:show, :index, :new, :create]
+  resources :projects, only: [:show, :index, :new, :create, :edit, :update]
 
-  resources :software_projects, only: [:show, :index, :new, :create]
-  resources :blogs, only: [:show, :index, :new, :create]
+  resources :software_projects, only: [:show, :index, :new, :create, :edit, :update]
+  resources :blogs, only: [:show, :index, :new, :create, :edit, :update]
 end

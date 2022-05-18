@@ -22,4 +22,18 @@ class BlogsController < ApplicationController
             render 'new'
         end
     end
+
+    def edit 
+        @blog = Blog.find(params[:id])
+    end
+
+    def update 
+        @blog = Blog.find(params[:id])
+        if @blog.update(params.require(:blog).permit(:title, :body))
+            flash[:notice] = 'Story was updated successfully'
+            redirect_to @blog 
+        else 
+            render 'edit'
+        end
+    end
 end

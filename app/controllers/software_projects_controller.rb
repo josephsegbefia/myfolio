@@ -21,4 +21,18 @@ class SoftwareProjectsController < ApplicationController
             render 'new'
         end
     end
+
+    def edit 
+        @sproject = SoftwareProject.find(params[:id])
+    end
+
+    def update 
+        @sproject = SoftwareProject.find(params[:id])
+        if @sproject.update(params.require(:software_project).permit(:title, :description, :body))
+            flash[:noitce] = 'Project updated!'
+            redirect_to @sproject 
+        else 
+            render 'edit'
+        end
+    end
 end
