@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :projects, only: [:show, :index, :new, :create]
 
   resources :software_projects, only: [:show, :index, :new, :create]
+  resources :blogs, only: [:show, :index, :new, :create]
 end
